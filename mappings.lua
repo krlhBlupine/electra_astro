@@ -18,6 +18,8 @@ return {
     --   desc = "Previous buffer",
     -- },
 
+    ["<leader>P"] = { ":PencilToggle<cr>", desc = 'Wrap text'},
+
     -- mappings seen under group name "Buffer"
     ["<leader>bD"] = {
       function()

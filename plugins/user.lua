@@ -3,9 +3,10 @@ return {
  { 'rose-pine/neovim', name = 'rose-pine', priority = 1000 },
  { 'aspeddro/pandoc.nvim', name = 'pandoc'},
  {"ellisonleao/glow.nvim", config = true, cmd = "Glow"},
- {'ekickx/clipboard-image.nvim', name = 'clipboard-image'},
+ {'ekickx/clipboard-image.nvim', name = 'clipboard-image', cmd = "PasteImg"},
  {'tpope/vim-repeat', name = 'vim-repeat', priority = 1000, lazy = false},
  {"tpope/vim-surround", name = 'vim-surround', priority = 1000, lazy = false},
+ {"preservim/vim-pencil", name = 'pencil', priority = 1000, cmd = "PencilToggle"},
  {'jakewvincent/mkdnflow.nvim',
         name = 'mkdnflow',
         lazy = false,
@@ -19,7 +20,7 @@ return {
                                             return('../'..input)
                                             end,
                     transform_implicit = function(input)
-                                              return(string.gsub(input, '../', ''))
+                                              return(string.gsub(input, '../', './'))
                                               end,
                     name_is_source = true,
                     conceal = true,
