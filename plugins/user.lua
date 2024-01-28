@@ -6,6 +6,7 @@ return {
  {'ekickx/clipboard-image.nvim', name = 'clipboard-image'},
  {'tpope/vim-repeat', name = 'vim-repeat', priority = 1000, lazy = false},
  {"tpope/vim-surround", name = 'vim-surround', priority = 1000, lazy = false},
+ {'tricktux/pomodoro.vim', name = 'pomo', cmd = "PomodoroStart"},
  {'jakewvincent/mkdnflow.nvim',
         name = 'mkdnflow',
         lazy = false,

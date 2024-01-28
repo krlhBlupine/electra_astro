@@ -17,7 +17,11 @@ return {
     --   function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
     --   desc = "Previous buffer",
     -- },
-
+  -- Pomodoro!
+  ["<leader>m"] = { name = "Pomodoro"},
+  ["<leader>mS"] = { ":PomodoroStatus<cr>", desc = "Pomodoro Status"},
+  ["<leader>mm"] = { ":PomodoroStart<cr><cr>", desc = "Start Pomodoro"},
+  ["<leader>ms"] = { ":PomodoroStop<cr>", desc = "Stop Pomodoro"},
     -- mappings seen under group name "Buffer"
     ["<leader>bD"] = {
       function()
