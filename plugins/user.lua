@@ -7,6 +7,7 @@ return {
  {'tpope/vim-repeat', name = 'vim-repeat', priority = 1000, lazy = false},
  {"tpope/vim-surround", name = 'vim-surround', priority = 1000, lazy = false},
  {"preservim/vim-pencil", name = 'pencil', priority = 1000, cmd = "PencilToggle"},
+ {'tricktux/pomodoro.vim', name = 'pomo', cmd = "PomodoroStart"},
  {'jakewvincent/mkdnflow.nvim',
         name = 'mkdnflow',
         lazy = false,
