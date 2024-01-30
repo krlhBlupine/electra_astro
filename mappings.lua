@@ -25,6 +25,13 @@ return {
   ["<leader>mS"] = { ":PomodoroStatus<cr>", desc = "Pomodoro Status"},
   ["<leader>mm"] = { ":PomodoroStart<cr><cr>", desc = "Start Pomodoro"},
   ["<leader>ms"] = { ":PomodoroStop<cr>", desc = "Stop Pomodoro"},
+
+
+  -- New files (Zettelkastin)
+    ["<leader>n"] = {name = "New File"},
+    ["<leader>nn"] = { "<cmd>enew<cr>", desc = "Blank"},
+    ["<leader>nz"] = { ":ZkNew<cr>", desc = "Unique"},
+
     -- mappings seen under group name "Buffer"
     ["<leader>bD"] = {
       function()
