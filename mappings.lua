@@ -26,11 +26,19 @@ return {
   ["<leader>mm"] = { ":PomodoroStart<cr><cr>", desc = "Start Pomodoro"},
   ["<leader>ms"] = { ":PomodoroStop<cr>", desc = "Stop Pomodoro"},
 
+  -- YAML
+  ["<leader>fy"] = { ":YAMLTelescope<cr>", desc = "Find Frontmatter"},
+
 
   -- New files (Zettelkastin)
     ["<leader>n"] = {name = "New File"},
     ["<leader>nn"] = { "<cmd>enew<cr>", desc = "Blank"},
     ["<leader>nz"] = { ":ZkNew<cr>", desc = "Unique"},
+    ["<leader>ni"] = { ":Template ", desc = 'Insert Template'},
+    ["<leader>nt"] = { ":TemProject ", desc = 'From Template'},
+
+  -- Zettelkastin browing
+    ["<leader>zb"] = { ":ZkBrowse<cr>", desc = "Browse unique notes"},
 
     -- mappings seen under group name "Buffer"
     ["<leader>bD"] = {

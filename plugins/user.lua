@@ -17,12 +17,13 @@ return {
       end},
  {'Furkanzmc/zettelkasten.nvim',
     name = 'zettelkasten',
-    cmd = 'ZkNew',
+    cmd = {'ZkNew', 'ZkBrowse'},
     config = function()
         require('zettelkasten').setup({
           id_format = '%Y%m%d%H%M',
-          id_pattern = '%d+%d+%d+%d+%d+%d+%d+%d+%d+%d+%d+%d+%d+',
-          notes_path = '~/Documents/Notes'
+          filename_pattern = '%d+',
+          title_pattern = 'aliases: .+',
+          notes_path = './',
       })
       end,
   },
@@ -44,10 +45,40 @@ return {
                                               end,
                     name_is_source = true,
                     conceal = true,
-                    }
+                    },
+                modules = {
+                    yaml = true,
+                    },
                 -- Config goes here; leave blank for defaults
             })
         end,
+ },
+ {"someone-stole-my-name/yaml-companion.nvim",
+   lazy = false,
+   requires = {
+      { "neovim/nvim-lspconfig" },
+      { "nvim-lua/plenary.nvim" },
+      { "nvim-telescope/telescope.nvim" },
+    },
+  },
+ {
+  "nvim-telescope/telescope.nvim",
+    lazy = false,
+    dependencies = { -- add a new dependency to telescope that is our new plugin
+    "nvim-telescope/telescope-media-files.nvim",
+    "someone-stole-my-name/yaml-companion.nvim"
+    },
+  -- the first parameter is the plugin specification
+  -- the second is the table of options as set up in Lazy with the `opts` key
+  config = function(plugin, opts)
+    -- run the core AstroNvim configuration function with the options table
+    require("plugins.configs.telescope")(plugin, opts)
+
+    -- require telescope and load extensions as necessary
+    local telescope = require "telescope"
+    telescope.load_extension "yaml_schema"
+    telescope.load_extension "media_files"
+  end,
  }
  -- Add plugins, the lazy syntax
  -- "andweeb/presence.nvim",
