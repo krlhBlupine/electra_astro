@@ -4,10 +4,10 @@ return {
  { 'aspeddro/pandoc.nvim', name = 'pandoc', priority = 1000},
  {"ellisonleao/glow.nvim", config = true, cmd = "Glow"},
  {'ekickx/clipboard-image.nvim', name = 'clipboard-image', cmd = "PasteImg"},
- {'tpope/vim-repeat', name = 'vim-repeat', priority = 1000, lazy = false},
- {"tpope/vim-surround", name = 'vim-surround', priority = 1000, lazy = false},
- {"preservim/vim-pencil", name = 'pencil', priority = 1000, cmd = "PencilToggle"},
+ {'tpope/vim-repeat', name = 'repeat', priority = 1000, lazy = false},
+ {"tpope/vim-surround", name = 'surround', priority = 1000, lazy = false},
  {'tricktux/pomodoro.vim', name = 'pomo', cmd = "PomodoroStart"},
+ { 'DAmesberger/sc-im.nvim', name = 'sc-im', lazy = false},
  {'glepnir/template.nvim', cmd = {'Template','TemProject'}, config = function()
     require('template').setup({
         temp_dir = '~/Documents/Notes/templates',
@@ -15,18 +15,6 @@ return {
         email = 'krlh.blupine@proton.me'
          })
       end},
- {'Furkanzmc/zettelkasten.nvim',
-    name = 'zettelkasten',
-    cmd = {'ZkNew', 'ZkBrowse'},
-    config = function()
-        require('zettelkasten').setup({
-          id_format = '%Y%m%d%H%M',
-          filename_pattern = '%d+',
-          title_pattern = 'aliases: .+',
-          notes_path = './',
-      })
-      end,
-  },
  {'jakewvincent/mkdnflow.nvim',
         name = 'mkdnflow',
         lazy = false,
@@ -37,12 +25,12 @@ return {
                    MkdnEnter = {{'i', 'n', 'v'}, '<CR>'}
                 },
                 links = {
-                    transform_explicit = function(input)
-                                            return('../'..input)
-                                            end,
-                    transform_implicit = function(input)
-                                              return(string.gsub(input, '../', './'))
-                                              end,
+                    -- transform_explicit = function(input)
+                                            -- return('../'..input)
+                                            -- end,
+                    -- transform_implicit = function(input)
+                                              -- return(string.gsub(input, '../', './'))
+                                              -- end,
                     name_is_source = true,
                     conceal = true,
                     },
