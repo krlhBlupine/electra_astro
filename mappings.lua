@@ -18,9 +18,6 @@ return {
       desc = "Previous buffer",
     },
 
-    ["<leader>P"] = { ":PencilToggle<cr>", desc = 'Wrap text'},
-
-
     ["<leader>s"] = {
         name = "sc-im",
         c = { ":lua require('sc-im').open_in_scim()<cr>", "Open table in sc-im" },
@@ -30,24 +27,30 @@ return {
         x = { desc = 'Close sc-im' }
     },
 
-  -- Pomodoro!
-  ["<leader>m"] = { name = "Pomodoro"},
-  ["<leader>mS"] = { ":PomodoroStatus<cr>", desc = "Pomodoro Status"},
-  ["<leader>mm"] = { ":PomodoroStart<cr><cr>", desc = "Start Pomodoro"},
-  ["<leader>ms"] = { ":PomodoroStop<cr>", desc = "Stop Pomodoro"},
+    -- Pomodoro!
+    ["<leader>P"] = { name = "Pomodoro",
+        S = { ":PomodoroStatus<cr>", "Pomodoro Status"},
+        i  = { ":PomodoroStart<cr><cr>", "Start Pomodoro"},
+        s = { ":PomodoroStop<cr>", "Stop Pomodoro"},
+      },
 
   -- Telescope
   ["<leader>fe"] = { ":ZkNotes<cr>", desc = "Find zettelkastin Entry"},
 
   -- Navigation
-  ["<leader>No"] = { ":ZkCd<cr>", desc = "Navigate to Notebook"},
-  ["<leader>Nh"] = { ":cd<cr>", desc = "Navigate Home"},
+  ["<leader>N"] = { name = "Navigation",
+      o = { ":ZkCd<cr>", "Navigate to Notebook"},
+      h = { ":cd<cr>", "Navigate Home"},
+      d = { ":ZkCd<cr>:cd daily<cr>", "Navigate to Daily Jounrnal"},
+    },
 
   -- New files (Zettelkastin)
-    ["<leader>n"] = {name = "New File"},
-    ["<leader>nn"] = { "<cmd>enew<cr>", desc = "Blank"},
-    ["<leader>nz"] = { "<Cmd>ZkNew {title = vim.fn.input('Title: '), template = vim.fn.input('Template: ')..'.md' }<CR>", desc = "Zettelkastin"},
-    ["<leader>ni"] = { ":Template ", desc = 'Insert Template'},
+    ["<leader>n"] = {name = "New File",
+      n = { "<cmd>enew<cr>", "Blank"},
+      z = { "<Cmd>ZkNew {title = vim.fn.input('Title: '), template = vim.fn.input('Template: ')..'.md' }<CR>", "Zettelkastin"},
+      d = { "<cmd>ZkNew {dir = 'daily'}<cr>", "New daily note"},
+      i = { "<cmd>:Template vim.fn.input('Template: ')<cr>", 'Insert Template'},
+  },
 
   -- Zettelkastin browing
     ["<leader>zb"] = { ":ZkBrowse<cr>", desc = "Browse unique notes"},

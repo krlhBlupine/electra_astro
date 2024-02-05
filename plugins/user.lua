@@ -1,20 +1,20 @@
 return {
  { "catppuccin/nvim", name = "catppuccin", priority = 1000 }, -- You can also add new plugins here as well:
  { 'rose-pine/neovim', name = 'rose-pine', priority = 1000 },
- { 'aspeddro/pandoc.nvim', name = 'pandoc', priority = 1000},
- {"ellisonleao/glow.nvim", config = true, cmd = "Glow"},
- {'ekickx/clipboard-image.nvim', name = 'clipboard-image', cmd = "PasteImg"},
- {'tpope/vim-repeat', name = 'repeat', priority = 1000, lazy = false},
- {"tpope/vim-surround", name = 'surround', priority = 1000, lazy = false},
- {'tricktux/pomodoro.vim', name = 'pomo', cmd = "PomodoroStart"},
+ { 'aspeddro/pandoc.nvim', name = 'pandoc', priority = 1000 },
+ { "ellisonleao/glow.nvim", config = true, cmd = "Glow" },
+ { 'ekickx/clipboard-image.nvim', name = 'clipboard-image', cmd = "PasteImg" },
+ { 'tpope/vim-repeat', name = 'repeat', priority = 1000, lazy = false },
+ { "tpope/vim-surround", name = 'surround', priority = 1000, lazy = false },
+ { 'tricktux/pomodoro.vim', name = 'pomo', cmd = "PomodoroStart" },
  { 'DAmesberger/sc-im.nvim', name = 'sc-im', lazy = false},
- {'glepnir/template.nvim', cmd = {'Template','TemProject'}, config = function()
+ { 'glepnir/template.nvim', cmd = {'Template','TemProject'}, config = function()
     require('template').setup({
-        temp_dir = '~/Documents/Notes/templates',
-        author = 'KRLH',
-        email = 'krlh.blupine@proton.me'
-         })
-      end},
+      temp_dir = '~/Documents/Notes/templates',
+      author = 'KRLH',
+      email = 'krlh.blupine@proton.me'
+    })
+  end },
  {'jakewvincent/mkdnflow.nvim',
         name = 'mkdnflow',
         lazy = false,
@@ -29,8 +29,12 @@ return {
                                             -- return('../'..input)
                                             -- end,
                     -- transform_implicit = function(input)
-                                              -- return(string.gsub(input, '../', './'))
-                                              -- end,
+                                            -- if input:match('%d%d%-%d%d-d%d%d%d%') then
+                                              -- return('journals/'..input)
+                                            -- else
+                                              -- return(input)
+                                            -- end
+                                          -- end,
                     name_is_source = true,
                     conceal = true,
                     },

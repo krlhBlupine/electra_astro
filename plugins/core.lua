@@ -30,9 +30,9 @@ return {
       button("LDR f f", get_icon("Search", 2, true) .. "Find File  "),
       button("LDR f o", get_icon("DefaultFile", 2, true) .. "Recents  "),
       button("LDR f w", get_icon("WordFile", 2, true) .. "Find Word  "),
+      button("LDR N o", get_icon("Notebook", 2, true) .. "Go to Notebook  "),
       button("LDR f '", get_icon("Bookmarks", 2, true) .. "Bookmarks  "),
       button("LDR S l", get_icon("Refresh", 2, true) .. "Last Session  "),
-      button("LDR N  ", get_icon("Notebook", 2, true) .. "Go to Notebook  "),
     }
       return opts
     end,
