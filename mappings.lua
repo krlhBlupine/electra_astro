@@ -51,8 +51,13 @@ return {
       n = { "<cmd>enew<cr>", "Blank"},
       z = { "<Cmd>ZkNew {title = vim.fn.input('Title: '), template = vim.fn.input('Template: ')..'.md' }<CR>", "Zettelkastin"},
       d = { "<cmd>ZkNew {dir = 'daily'}<cr>", "New daily note"},
-      i = { "<cmd>:Template vim.fn.input('Template: ')<cr>", 'Insert Template'},
+      i = { "<cmd>Template vim.fn.input('Template: ')<cr>", 'Insert Template'},
   },
+
+  -- Insert
+    ["<leader>i"] = {name = "Insert",
+      l = { "<cmd>ZkInsertLink<cr>", "Insert link"},
+    },
 
     -- mappings seen under group name "Buffer"
     ["<leader>bD"] = {
