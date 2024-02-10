@@ -35,7 +35,9 @@ return {
       },
 
   -- Telescope
-  ["<leader>fe"] = { ":ZkNotes<cr>", desc = "Find zettelkastin Entry"},
+  ["<leader>fe"] = { "<cmd>:ZkNotes<cr>", desc = "Find zettelkastin entries"},
+  ["<leader>fT"] = { function() require("telescope.builtin").colorscheme { enable_preview = true } end, desc = "Find themes" },
+  ["<leader>ft"] = { "<cmd>:ZkTags<cr>", desc = "Find tags"},
 
   -- Navigation
   ["<leader>N"] = { name = "Navigation",
@@ -51,9 +53,6 @@ return {
       d = { "<cmd>ZkNew {dir = 'daily'}<cr>", "New daily note"},
       i = { "<cmd>:Template vim.fn.input('Template: ')<cr>", 'Insert Template'},
   },
-
-  -- Zettelkastin browing
-    ["<leader>zb"] = { ":ZkBrowse<cr>", desc = "Browse unique notes"},
 
     -- mappings seen under group name "Buffer"
     ["<leader>bD"] = {
