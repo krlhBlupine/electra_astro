@@ -3,11 +3,13 @@ return {
  { 'rose-pine/neovim', name = 'rose-pine', priority = 1000 },
  { 'aspeddro/pandoc.nvim', name = 'pandoc', priority = 1000 },
  { "ellisonleao/glow.nvim", config = true, cmd = "Glow" },
- { 'ekickx/clipboard-image.nvim', name = 'clipboard-image', cmd = "PasteImg" },
+ { 'dfendr/clipboard-image.nvim', name = 'clipboard-image', lazy=false },
  { 'tpope/vim-repeat', name = 'repeat', priority = 1000, lazy = false },
  { "tpope/vim-surround", name = 'surround', priority = 1000, lazy = false },
  { 'tricktux/pomodoro.vim', name = 'pomo', cmd = "PomodoroStart" },
  { 'DAmesberger/sc-im.nvim', name = 'sc-im', lazy = false},
+ { "williamboman/mason-lspconfig.nvim", lazy = false},
+ { "neovim/nvim-lspconfig", lazy = false},
  { 'glepnir/template.nvim', cmd = {'Template','TemProject'}, config = function()
     require('template').setup({
       temp_dir = '~/Documents/Notes/templates',
@@ -25,9 +27,9 @@ return {
                    MkdnEnter = {{'i', 'n', 'v'}, '<CR>'}
                 },
                 links = {
-                    -- transform_explicit = function(input)
-                                            -- return('../'..input)
-                                            -- end,
+                    transform_explicit = function(input)
+                                            return(input)
+                                            end,
                     -- transform_implicit = function(input)
                                             -- if input:match('%d%d%-%d%d-d%d%d%d%') then
                                               -- return('journals/'..input)
@@ -35,7 +37,7 @@ return {
                                               -- return(input)
                                             -- end
                                           -- end,
-                    name_is_source = true,
+                    name_is_source = false,
                     conceal = true,
                     },
                 modules = {
@@ -45,6 +47,14 @@ return {
             })
         end,
  },
+ { "edluffy/hologram.nvim",
+  lazy = false,
+  config = function()
+    require('hologram').setup{
+       auto_display = true -- WIP automatic markdown image display, may be prone to breaking
+      }
+    end
+  },
  {"someone-stole-my-name/yaml-companion.nvim",
    lazy = false,
    requires = {

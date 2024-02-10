@@ -35,7 +35,10 @@ return {
       },
 
   -- Telescope
-  ["<leader>fe"] = { ":ZkNotes<cr>", desc = "Find zettelkastin Entry"},
+  ["<leader>f"] = { '', name = "Find",
+      e = { ":ZkNotes<cr>", "Find zettelkastin Entry"},
+      T = { ":ZkTags<cr>", "Find tags"},
+    },
 
   -- Navigation
   ["<leader>N"] = { name = "Navigation",
