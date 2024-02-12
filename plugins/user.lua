@@ -28,7 +28,7 @@ return {
                 },
                 links = {
                     transform_explicit = function(input)
-                                            return(input)
+                                            return("./"..input)
                                             end,
                     -- transform_implicit = function(input)
                                             -- if input:match('%d%d%-%d%d-d%d%d%d%') then
@@ -50,9 +50,12 @@ return {
  { "edluffy/hologram.nvim",
   lazy = false,
   config = function()
-    require('hologram').setup{
+    if not vim.g.neovide then
+      require('hologram').setup{
        auto_display = true -- WIP automatic markdown image display, may be prone to breaking
       }
+    -- Put anything you want to happen only in Neovide here
+    end
     end
   },
  {"someone-stole-my-name/yaml-companion.nvim",

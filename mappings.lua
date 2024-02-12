@@ -57,6 +57,7 @@ return {
   -- Insert
     ["<leader>i"] = {name = "Insert",
       l = { "<cmd>ZkInsertLink<cr>", "Insert link"},
+      s = { "<cmd>'<,'>ZkInsertLinkAtSelection<cr>", "Insert link at selection"},
     },
 
     -- mappings seen under group name "Buffer"
