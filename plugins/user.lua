@@ -42,7 +42,12 @@ return {
                     },
                 modules = {
                     yaml = true,
+                    cmp = true
                     },
+                perspective = {
+                    priority = 'first',
+                    root_tell = '.zk'
+        }
                 -- Config goes here; leave blank for defaults
             })
         end,
@@ -70,6 +75,7 @@ return {
   "nvim-telescope/telescope.nvim",
     lazy = false,
     dependencies = { -- add a new dependency to telescope that is our new plugin
+    "SalOrak/whaler",
     "nvim-telescope/telescope-media-files.nvim",
     "someone-stole-my-name/yaml-companion.nvim"
     },
@@ -81,8 +87,19 @@ return {
 
     -- require telescope and load extensions as necessary
     local telescope = require "telescope"
+    telescope.setup({
+    extensions = {
+        whaler = { 
+        directories = {{path="~/Projects",alias="Projects"},
+              {path="/media/ghArchive/Writing/notes",alias="Notes"},
+              {path="~/.config/",alias="Config"}},
+        file_explorer = "neotree",
+    },
+    }
+    })
     telescope.load_extension "yaml_schema"
     telescope.load_extension "media_files"
+    telescope.load_extension "whaler"
   end,
  }
  -- Add plugins, the lazy syntax

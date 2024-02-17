@@ -35,9 +35,11 @@ return {
       },
 
   -- Telescope
-  ["<leader>fe"] = { "<cmd>:ZkNotes<cr>", desc = "Find zettelkastin entries"},
+  ["<leader>fe"] = { "<Cmd>ZkNotes { sort = { 'modified' } }<CR>", desc = "Find zettelkastin entries"},
   ["<leader>fT"] = { function() require("telescope.builtin").colorscheme { enable_preview = true } end, desc = "Find themes" },
   ["<leader>ft"] = { "<cmd>:ZkTags<cr>", desc = "Find tags"},
+  ["<leader>fd"] = { "<cmd>:Telescope whaler<cr>", desc = "Find directories"},
+  ["<leader>fs"] = { "<cmd>'<,'>ZkMatch<CR>", desc = "Find selection"},
 
   -- Navigation
   ["<leader>N"] = { name = "Navigation",
