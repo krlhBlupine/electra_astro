@@ -1,4 +1,5 @@
 return {
+ { "rebelot/kanagawa.nvim", name = "kanagawa", priority = 1000},
  { "catppuccin/nvim", name = "catppuccin", priority = 1000 }, -- You can also add new plugins here as well:
  { 'rose-pine/neovim', name = 'rose-pine', priority = 1000 },
  { 'aspeddro/pandoc.nvim', name = 'pandoc', priority = 1000 },
@@ -93,6 +94,9 @@ return {
         directories = {{path="~/Projects",alias="Projects"},
               {path="/media/ghArchive/Writing/notes",alias="Notes"},
               {path="~/.config/",alias="Config"}},
+        oneoff_directories = {
+              {path="~/.dotfiles", alias="Dotfiles"}
+            },
         file_explorer = "neotree",
     },
     }

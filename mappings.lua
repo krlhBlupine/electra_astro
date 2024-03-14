@@ -54,6 +54,8 @@ return {
       z = { "<Cmd>ZkNew {title = vim.fn.input('Title: '), template = vim.fn.input('Template: ')..'.md' }<CR>", "Zettelkastin"},
       d = { "<cmd>ZkNew {dir = 'daily'}<cr>", "New daily note"},
       i = { "<cmd>Template vim.fn.input('Template: ')<cr>", 'Insert Template'},
+      s = { "<cmd>'<,'>ZkNewFromTitleSelection {template = vim.fn.input('Template: ')..'.md' } <cr>", "New from selection (Title)"},
+      S = { "<cmd>'<,'>ZkNewFromContentSelection {template = vim.fn.input('Template: ')..'.md' } <cr>", "New from selection (Content)"},
   },
 
   -- Insert
